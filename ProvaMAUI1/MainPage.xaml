@@ -21,7 +21,8 @@
                 Style="{StaticResource Headline}"
                 FontSize="35"
                 Padding="25"
-                SemanticProperties.HeadingLevel="Level1" />
+                SemanticProperties.HeadingLevel="Level1" 
+                />
 
 
             <Label
