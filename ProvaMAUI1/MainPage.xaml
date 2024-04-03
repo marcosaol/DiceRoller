@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProvaMAUI1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="ROLADOR DE"
+                Style="{StaticResource Headline}"
+                FontSize="35"
+                Padding="0"
+                SemanticProperties.HeadingLevel="Level1" />
+
+
+            <Label
+                Text="DADOS"
+                Style="{StaticResource Headline}"
+                FontSize="35"
+                Padding="25"
+                SemanticProperties.HeadingLevel="Level1" />
+
+
+            <Label
+                x:Name="DiceNumberLbl"
+                Text="0"
+                FontAttributes="Bold"
+                FontSize="50"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level1"/>
+
+            <Picker
+                x:Name="DiceSidesPck"
+                Title="Quantidade de lados">
+                
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>20</x:Int32>
+                        <x:Int32>100</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                x:Name="DiceRollBtn"
+                Text="ROLAR DADO" 
+                Clicked="OnDiceRollClicked"
+                BackgroundColor="Gray"
+                HorizontalOptions="Fill" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
