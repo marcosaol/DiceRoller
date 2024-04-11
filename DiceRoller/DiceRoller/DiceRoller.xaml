@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceRoller.DiceRoller"
+             Title="DiceRoller">
+    <VerticalStackLayout Spacing="30">
+        <Label
+            Margin="70"
+            Text="ROLADOR DE DADOS"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="35"
+            FontAttributes="Bold"/>
+
+        <Label
+            x:Name="showNumber"
+            Text=""
+            HorizontalOptions="Center"
+            FontSize="50"/>
+
+        <Picker x:Name="picker"
+                Title="Quantidade de lados"
+                SelectedIndexChanged="picker_SelectedIndexChanged"
+                WidthRequest="250">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>4</x:String>
+                    <x:String>6</x:String>
+                    <x:String>10</x:String>
+                    <x:String>20</x:String>
+                    <x:String>100</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button
+            x:Name="ButtonDiceRoller"
+            Text="ROLAR DADO"
+            Clicked="ButtonDiceRoller_Clicked"
+            WidthRequest="250"
+            Background="DimGray"
+            />
+    </VerticalStackLayout>
+</ContentPage>
