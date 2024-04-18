@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CorrecaoProva.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label
+                    Text="Rolador de Dados"
+                    FontSize="Header"/>
+                <Label
+                    x:Name="ResultLabel"
+                    Text=""
+                    FontSize="Large"/>
+                <Picker x:Name="SidesPicker"
+                        Title="Rolar Dado">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>4</x:Int32>
+                            <x:Int32>6</x:Int32>
+                            <x:Int32>8</x:Int32>
+                            <x:Int32>10</x:Int32>
+                            <x:Int32>20</x:Int32>
+                            <x:Int32>100</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Button
+                    x:Name="RollButton"
+                    Text="Rolar o dado"
+                    BackgroundColor="#404040"
+                    Clicked="RollButton_Clicked"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
