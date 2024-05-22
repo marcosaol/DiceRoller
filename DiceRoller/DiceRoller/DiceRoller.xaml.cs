@@ -1,4 +1,4 @@
-using Microsoft.UI.Xaml.Controls.Primitives;
+
 using System.Collections.Generic;
 using System.Globalization;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -14,27 +14,19 @@ public partial class DiceRoller : ContentPage
 
         InitializeComponent();
 
-		var diceList = new List<string>();
-
-		diceList.Add("4");
-        diceList.Add("6");
-        diceList.Add("10");
-        diceList.Add("20");
-        diceList.Add("100");
-
-        Picker picker = new Picker { Title = "Quantidade de lados"};
-        picker.ItemsSource = diceList;
-
     }
 
     private void ButtonDiceRoller_Clicked(object sender, EventArgs e)
     {
+        if(picker.SelectedIndex == -1) {
+            picker.SelectedIndex = 0;
+        }
+
         Random random = new Random();
 
-        int selectedIndex = picker.SelectedIndex;
 
-        var numero = Convert.ToInt32(showNumber.Text);
-        var sortedNumber = random.Next(numero);
+        var numero = Convert.ToInt32((string)picker.SelectedItem);
+        var sortedNumber = random.Next(1, numero);
         if(sortedNumber > 0)
         {
             showNumber.Text = Convert.ToString(sortedNumber).ToString();
