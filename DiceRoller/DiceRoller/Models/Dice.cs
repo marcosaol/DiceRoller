@@ -16,7 +16,7 @@ namespace DiceRoller.Models
             numero = qtdLados;
         }
         public void Rolar() {
-            sortedNumber = new Random().Next(1, numero) +1;
+            sortedNumber = new Random().Next(numero) +1;
         }
     }
 }

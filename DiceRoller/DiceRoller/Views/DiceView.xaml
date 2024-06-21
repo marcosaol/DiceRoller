@@ -37,7 +37,7 @@
          Text="ROLAR DADO"
          Command="{Binding RollCommand}"
          WidthRequest="250"
-         Background="DimGray"
+         Background="Purple"
          />
     </VerticalStackLayout>
 </ContentPage>
